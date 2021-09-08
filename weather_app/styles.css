@@ -5,4 +5,11 @@ body{
   }
   .container{
     max-width: 400px;
+    
+  }
+  .icon{
+    position: relative;
+    top: -7vh;
+    border-radius: 50%;
+    
   }
