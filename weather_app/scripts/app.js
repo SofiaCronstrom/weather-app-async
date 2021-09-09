@@ -49,7 +49,7 @@ e.preventDefault();
 
 //city get the value of name wich is "city" in form in html to save trim to take away any blankspaces
 const city = cityForm.city.value.trim();
-//reset the written input after enter
+//reset the written submit after enter
 cityForm.reset();
 
 //console.log data from input and async 
@@ -57,4 +57,12 @@ updateCity(city)
     .then(data => updateUI(data))
     .catch(err => console.log(err));
 
+    localStorage.setItem('location', city);
+
 });
+
+if(localStorage.getItem('location')){
+    updateCity(localStorage.getItem('location'))
+    .then(data => updateUI(data))
+    .catch(console.log(err));
+}
