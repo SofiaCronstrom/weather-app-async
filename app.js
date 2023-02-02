@@ -26,10 +26,10 @@ const updateUI = (data) => {
        card.classList.remove('d-none')
    }
 
-   let timeSrc = weather.IsDayTime ? 'img/day.svg' : 'img/night.svg';
+   let timeSrc = weather.IsDayTime ? 'day.svg' : 'night.svg';
    time.setAttribute('src', timeSrc);
 
-   const iconSrc = `img/icons/${weather.WeatherIcon}.svg`
+   const iconSrc = `/icons/${weather.WeatherIcon}.svg`
    icon.setAttribute('src', iconSrc);
 
 };
@@ -54,5 +54,4 @@ forecast.updateCity(city)
 if(localStorage.getItem('location')){
     forecast.updateCity(localStorage.getItem('location'))
     .then(data => updateUI(data))
-    .catch(console.log(err));
 }
